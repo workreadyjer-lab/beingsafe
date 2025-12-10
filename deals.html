@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--corinnes code-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexican Lexican — Deals</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .deals-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .deal-card {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .deal-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .deal-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: white(0,0,0,0.5);
+            color: black;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .deal-overlay h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+        }
+
+        .deal-overlay button {
+            padding: 8px 15px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .deal-overlay button:hover {
+            background-color: #ffbf00;
+        }
+
+        @media (max-width: 960px) {
+            .deal-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .deal-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-left">
+        <a href="menu.html" class="header-icon">📖</a>
+        <a href="deals.html" class="header-icon">💸</a>
+        <a href="rewards.html" class="header-icon">🎉</a>
+    </div>
+
+    <div class="header-center">
+        <a href="main.html">
+            <img src="imgs/chatgpt.png" alt="Site Logo" class="site-logo">
+        </a>
+    </div>
+
+   <div class="header-right">
+    <span class="header-icon sign-in-btn" id="signInIcon">🔐</span>
+
+    <div class="user-profile" id="userProfile" style="display:none;">
+        <img src="imgs/aitacogirl.png" class="profile-circle">
+        <button class="signout-btn" id="signOutBtn">Sign Out</button>
+    </div>
+
+    <span class="header-icon cart-btn">🛒</span>
+</div>
+</header>
+
+<h1 style="text-align:center; margin-top: 30px;">Weekly Deals</h1>
+
+<div class="deals-container" id="dealsContainer">
+</div>
+
+<script src="deals.js"></script>
+</body>
+</html>
+
+<!--corinnes code-->

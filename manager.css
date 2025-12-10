@@ -1,0 +1,254 @@
+/* Chris code */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f1e8d9;
+    margin: 0;
+    padding: 0;
+}
+
+.manager-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.manager-container h1 {
+    text-align: center;
+    color: #5a4632;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.menu-management {
+    background: #ffffff;
+    border: 2px solid #d9cbb6;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.menu-management h2 {
+    color: #5a4632;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.add-item-form {
+    background: #f1e8d9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #5a4632;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d9cbb6;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #5a4632;
+}
+
+.add-btn,
+.save-btn {
+    background: #5a4632;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover,
+.save-btn:hover {
+    background: #7a6148;
+    transform: scale(1.03);
+}
+
+.menu-items-list {
+    background: #f1e8d9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.menu-item-row {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #d9cbb6;
+    gap: 15px;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.menu-item-row:last-child {
+    border-bottom: none;
+}
+
+.item-image-thumb {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #d9cbb6;
+}
+
+.item-image-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details h4 {
+    margin: 0 0 8px 0;
+    color: #5a4632;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.item-details p {
+    margin: 3px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.image-path {
+    color: #999;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.edit-btn {
+    background: #8b6f54;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.edit-btn:hover {
+    background: #a38468;
+}
+
+.delete-btn {
+    background: #c05746;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: #a04736;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.55);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 30px;
+    border: 2px solid #d9cbb6;
+    border-radius: 14px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.modal-content h2 {
+    color: #5a4632;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.close {
+    color: #8b6f54;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #5a4632;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .item-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 20px;
+    }
+}
+/* chris  code ^ */

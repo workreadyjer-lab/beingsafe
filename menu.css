@@ -1,0 +1,377 @@
+/* corinnes code */ 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+
+.site-header {
+    width: 100%;
+    background-color: #f1e8d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #d9cbb6;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-left {
+    width: 33%;
+    display: flex;
+    gap: 18px;
+}
+
+.header-center {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-right {
+    width: 33%;
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end; 
+    gap: 20px; 
+}
+
+.header-left img.site-logo, .site-logo { 
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-icon {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #5a4632;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.header-icon:hover {
+    transform: scale(1.15);
+    color: #8b6f54;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-circle {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #5a4632;
+}
+
+.signout-btn {
+    background: #5a4632;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.signout-btn:hover {
+    background-color: #7a6148;
+}
+
+
+@media (max-width: 600px) {
+    .header-center .site-title {
+        font-size: 1.3rem;
+    }
+
+    .header-icon {
+        font-size: 1.4rem;
+    }
+
+    .header-left img.site-logo, .site-logo {
+        height: 40px;
+    }
+    
+    .profile-circle {
+        width: 40px; 
+        height: 40px; 
+    }
+    
+    .signout-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+.menu-section-title {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.menu-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
+}
+
+
+.menu-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        overflow: hidden; 
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.menu-item img {
+    width: 100%; 
+    height: 180px; 
+    object-fit: cover; 
+}
+
+.menu-item h3 {
+    font-size: 1.3rem;
+    color: #444;
+    margin: 15px 10px 10px 10px;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.5;
+        padding: 0 20px 20px 20px;
+        margin: 0;
+}
+
+.menu-item p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    padding: 0 20px 20px 20px; 
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    margin-bottom: 20px;     
+    user-select: none;       
+}
+
+.quantity-btn {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 50%;      
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;       
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    padding-bottom: 2px; 
+}
+
+.quantity-btn:hover {
+    background-color: #e7e7e7;
+}
+
+.quantity-btn:active {
+    transform: scale(0.95);
+}
+
+.minus-btn {
+    color: #d32f2f; 
+}
+
+.plus-btn {
+    color: #388e3c; 
+}
+
+.quantity {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    padding: 0 18px; 
+    min-width: 25px; 
+    text-align: center;
+}
+
+
+.quantity {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    
+    width: 60px;
+    
+    text-align: center; 
+    
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
+    margin: 0 8px; 
+
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.quantity::-webkit-outer-spin-button,
+.quantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.quantity-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1; 
+    }
+
+    .menu-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.menu-nav button {
+    background-color: #388e3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.menu-nav button:hover {
+    background-color: #2e7030;
+}
+
+.site-header {
+    width: 100%;
+    background-color: #f1e8d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #d9cbb6;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-left img.site-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-center .site-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #5a4632;
+    text-align: center;
+    white-space: nowrap;
+    padding-left: 100px;
+}
+
+.header-right {
+    display: flex;
+    gap: 18px;
+}
+
+.header-icon {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #5a4632;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.header-icon:hover {
+    transform: scale(1.15);
+    color: #8b6f54;
+}
+
+
+@media (max-width: 600px) {
+    .header-center .site-title {
+        font-size: 1.3rem;
+    }
+
+    .header-icon {
+        font-size: 1.4rem;
+    }
+
+    .header-left img.site-logo {
+        height: 40px;
+    }
+}
+
+.menu-nav {
+    margin-top: 40px;  
+}
+
+.page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px; 
+}
+
+.add-to-cart-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 80%;
+    max-width: 200px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+}
+
+/* corinne's code ^ */

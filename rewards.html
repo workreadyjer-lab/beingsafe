@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--germaines code-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards - Mexican Lexican</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="rewards.css">
+</head>
+<body>
+    <div class="falling-tacos">
+        <div class="taco"></div>
+        <div class="taco"></div>
+        <div class="taco"></div>
+        <div class="taco"></div>
+        <div class="taco"></div>
+        <div class="taco"></div>
+        <div class="taco"></div>
+        <div class="taco"></div>
+        <div class="taco"></div>
+    </div>
+
+    <div class="rewards-container">
+        <div class="rewards-header">
+            <h1>🌟 Taco Rewards Club 🌟</h1>
+            <p>Earn points with every order and get free food!</p>
+        </div>
+
+        <div class="points-display">
+            <div class="current-points" id="currentPoints">0</div>
+            <div>Reward Points</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar" style="width: 0%;">
+                    <div class="progress-text" id="progressText">0/100</div>
+                </div>
+            </div>
+            <div>Next reward in <span id="pointsNeeded">100</span> points!</div>
+        </div>
+
+        <div class="rewards-info">
+            <div class="info-card">
+                <h3>📦 Earn Points</h3>
+                <p><strong>20 points</strong> for every order</p>
+                <p>No minimum purchase required</p>
+            </div>
+            <div class="info-card">
+                <h3>🎁 Free Reward</h3>
+                <p><strong>100 points</strong> = 1 free item</p>
+                <p>Choose any menu item up to $15</p>
+            </div>
+            <div class="info-card">
+                <h3>⚡ Instant Rewards</h3>
+                <p>Points added immediately</p>
+                <p>Use rewards right away</p>
+            </div>
+        </div>
+
+        <div class="redeem-section">
+            <h3>🏆 Ready to Redeem?</h3>
+            <p>You have enough points for a free item!</p>
+            <button class="redeem-btn" id="redeemBtn" onclick="redeemReward()" disabled>
+                Redeem 100 Points for Free Item
+            </button>
+        </div>
+
+        <div class="order-history">
+            <h3>📋 Recent Orders & Points</h3>
+            <div id="orderHistory">
+                <p style="text-align: center; color: #6c757d;">No orders yet. Start ordering to earn points!</p>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="menu.html">🌮 Back to Menu</a>
+            <a href="cart.html">🛒 View Cart</a>
+        </div>
+    </div>
+
+    <script src="rewards.js"></script>
+</body>
+</html>
+<!-- germanine's code ^-->

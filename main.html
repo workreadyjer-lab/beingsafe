@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <!--corinnes code-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mexican Lexican — Home</title>
+  <link rel="stylesheet" href="main.css" />
+  <style>
+
+    .site-footer {
+      background-color: #2c2c2c;
+      color: #f0f0f0;
+      padding: 40px 20px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      margin: 25px 0;
+    }
+
+    .footer-links h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffd700;
+    }
+
+    .footer-blurb {
+      max-width: 600px;
+      margin: 25px auto 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #cccccc;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+      font-size: 12px;
+      color: #999;
+    }
+
+    @media (max-width: 600px) {
+      .footer-links a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <header class="site-header">
+    <div class="header-left">
+        <a href="menu.html" class="header-icon">📖</a>
+        <a href="deals.html" class="header-icon">💸</a>
+        <a href="rewards.html" class="header-icon">🎉</a>
+    </div>
+
+    <div class="header-center">
+        <a href="main.html">
+            <img src="imgs/chatgpt.png" alt="Site Logo" class="site-logo">
+        </a>
+    </div>
+
+   <div class="header-right">
+    <span class="header-icon sign-in-btn" id="signInIcon">🔐</span>
+
+    <div class="user-profile" id="userProfile" style="display:none;">
+        <img src="imgs/aitacogirl.png" class="profile-circle">
+        <button class="signout-btn" id="signOutBtn">Sign Out</button>
+    </div>
+
+    <span class="header-icon cart-btn">🛒</span>
+</div>
+
+</header>
+
+
+  <div class="order-banner">
+    <div class="order-banner-content">
+
+        <h1>Bring the fiesta home!</h1>
+        <button class="order-btn delivery-btn">Delivery</button>
+        
+        <span class="order-separator">OR</span>
+        
+        <button class="order-btn pickup-btn">Pick Up</button>
+    </div>
+</div>
+
+
+<section class="weekly-deal">
+    <div class="deal-overlay">
+        <h2>Weekly Deal</h2>
+        <p>Buy 2 Get 2 Free Tacos</p>
+        <button class="deal-btn" id="dealButton">Add Deal</button>
+    </div>
+</section>
+
+<div class="delivery-overlay" id="deliveryOverlay">
+    <div class="delivery-modal">
+        <h2>Delivery Details</h2>
+
+        <form class="delivery-form" id="delivery-form">
+            <label for="delivery-name">Full Name</label>
+            <input type="text" id="delivery-name" required pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces">
+
+            <label for="delivery-phone">Phone Number</label>
+            <input type="tel" id="delivery-phone" required pattern="[\d\s-]{10,}" title="Please enter a valid phone number (at least 10 digits)">
+
+            <label for="delivery-address">Delivery Address</label>
+            <input type="text" id="delivery-address" required title="Please enter a valid street address">
+
+            <label for="delivery-suite">Apartment / Suite (optional)</label>
+            <input type="text" id="delivery-suite">
+
+            <label for="delivery-city">City</label>
+            <input type="text" id="delivery-city" required pattern="[A-Za-z\s]+" title="City should only contain letters and spaces">
+
+            <label for="delivery-instructions">Delivery Instructions (optional)</label>
+            <textarea id="delivery-instructions"></textarea>
+
+            <button type="submit" class="delivery-submit">Continue</button>
+        </form>
+    </div>
+</div>
+
+<div class="delivery-overlay" id="pickupOverlay">
+    <div class="delivery-modal">
+        <h2>Pick Up Details</h2>
+
+        <form class="delivery-form" id="pickup-form">
+            <label for="pickup-name">Full Name</label>
+            <input type="text" id="pickup-name" required pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces">
+
+            <label for="pickup-phone">Phone Number</label>
+            <input type="tel" id="pickup-phone" required pattern="[\d\s-]{10,}" title="Please enter a valid phone number (at least 10 digits)">
+
+            <label for="pickup-location">Pick Up Location</label>
+            <select id="pickup-location" required>
+                <option value="">Select a location</option>
+                <option value="downtown">Downtown - 123 Main St</option>
+                <option value="north">North Side - 456 Oak Ave</option>
+                <option value="west">West End - 789 Elm Blvd</option>
+            </select>
+
+            <label for="pickup-time">Pick Up Time</label>
+            <select id="pickup-time" required>
+                <option value="">Select a time</option>
+                <option value="asap">ASAP (20-30 min)</option>
+                <option value="30min">30 minutes</option>
+                <option value="1hour">1 hour</option>
+                <option value="2hours">2 hours</option>
+            </select>
+
+            <label for="pickup-instructions">Special Instructions (optional)</label>
+            <textarea id="pickup-instructions" placeholder="Any special requests or notes..."></textarea>
+
+            <button type="submit" class="delivery-submit">Continue</button>
+        </form>
+    </div>
+</div>
+
+<div class="signin-overlay" id="signinOverlay">
+  <div class="signin-modal">
+    <button class="close-signin">&times;</button>
+
+    <img src="imgs/chatgpt.png" class="signin-logo" alt="Mexican Lexican Logo">
+
+    <h2>Mexican Lexican, join our fiesta today!</h2>
+
+    <p class="signin-switch">Already have an account? <span>Sign in!</span></p>
+
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" placeholder="Enter your email" required title="Please enter a valid email address">
+
+
+<label for="password">Password</label>
+<input type="password" id="password" name="password" placeholder="Enter your password" minlength="8" required title="Password must be at least 8 characters">
+
+    <button class="signin-continue">Continue</button>
+
+    <div class="signin-divider">
+      <hr><span>or</span><hr>
+    </div>
+
+    <button class="signin-create">Sign Up!</button>
+
+    <p class="faculty-link" id="facultyLink">Faculty Sign In</p>
+
+  </div>
+</div>
+
+<div class="signin-overlay" id="facultyOverlay" style="display:none;">
+  <div class="signin-modal">
+
+    <img src="imgs/chatgpt.png" class="signin-logo" alt="Mexican Lexican Logo">
+
+    <h2>Faculty & Manager Login</h2>
+
+    <p style="color: #666; margin-bottom: 20px;">Please enter your manager credentials</p>
+
+    <label for="faculty-username">Username</label>
+    <input type="text" id="faculty-username" placeholder="Enter username" required pattern="[A-Za-z0-9_-]{3,}" title="Username must be at least 3 characters long (letters, numbers, underscores, or dashes)">
+
+    <label for="faculty-password">Password</label>
+    <input type="password" id="faculty-password" placeholder="Enter password" required minlength="8" title="Password must be at least 8 characters">
+
+    <button class="signin-continue" id="facultyLoginBtn">Login as Manager</button>
+
+  </div>
+</div>
+
+<div class="cart-overlay" id="cartOverlay" style="display:none;">
+    <div class="cart-modal">
+        <button class="close-cart">&times;</button>
+
+        <h2>Your Cart</h2>
+
+        <div class="cart-items">
+            <p>Your cart is currently empty</p>
+        </div>
+
+        <div class="cart-summary">
+            <div class="summary-line">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Tax:</span>
+                <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="summary-line total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+        </div>
+
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <img src="imgs/chatgpt.png" alt="Mexican Lexican Logo" class="footer-logo">
+        
+        <div class="footer-links">
+            <h3>Links</h3>
+            <a href="menu.html">Menu</a>
+            <a href="deals.html">Deals</a>
+            <a href="rewards.html">Rewards</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="footer-blurb">
+            <p>Mexican Lexican brings authentic Mexican flavors to your table with fresh ingredients and bold recipes. From sizzling fajitas to handcrafted tacos, we're passionate about delivering delicious food and unforgettable experiences. Join the fiesta today!</p>
+        </div>
+        
+        <div class="footer-bottom">
+            © 2025 Mexican Lexican. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="cart.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
+
+<!--corinnes code-->

@@ -1,0 +1,104 @@
+
+<!-- Chris code --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexican Eats - Manager Dashboard</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="manager.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <h2>Manager Dashboard</h2>
+        </div>
+        <div class="nav-right">
+<button class="home-btn" id="managerLogoutBtn">Logout</button>
+        </div>
+    </nav>
+    
+    <div class="manager-container">
+        <h1>Menu Management System</h1>
+        
+        <div class="menu-management">
+            <h2>Add New Menu Item</h2>
+            <form id="add-item-form" class="add-item-form">
+                <div class="form-group">
+                    <label for="item-name">Item Name:</label>
+                    <input type="text" id="item-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-price">Price ($):</label>
+                    <input type="number" id="item-price" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-image">Image URL:</label>
+                    <input type="text" id="item-image" placeholder="imgs/breakfast/item.jpg" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-category">Category:</label>
+                    <select id="item-category" required>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="drinks">Drinks</option>
+                        <option value="desserts">Desserts</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="add-btn">Add Item</button>
+            </form>
+        </div>
+
+        <div class="menu-management">
+            <h2>Current Menu Items</h2>
+            <div id="menu-items-container" class="menu-items-list">
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Menu Item</h2>
+            <form id="edit-item-form">
+                <input type="hidden" id="edit-item-id">
+                
+                <div class="form-group">
+                    <label for="edit-item-name">Item Name:</label>
+                    <input type="text" id="edit-item-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-item-price">Price ($):</label>
+                    <input type="number" id="edit-item-price" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-item-image">Image URL:</label>
+                    <input type="text" id="edit-item-image" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-item-category">Category:</label>
+                    <select id="edit-item-category" required>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="drinks">Drinks</option>
+                        <option value="desserts">Desserts</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="manager.js"></script>
+</body>
+</html>
+<!--Chris code ^ -->

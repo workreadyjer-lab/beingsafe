@@ -1,0 +1,57 @@
+/* chris  code */
+.login-boxes {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.login-box, .signup-box {
+    flex: 1;
+    max-width: 350px;
+    background: #f8f9fa;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    padding: 35px 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 350px;
+}
+
+.login-box div, .signup-box div {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.login-box label, .signup-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.login-box input, .signup-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-box button, .signup-box button {
+    width: 100%;
+    padding: 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.login-box button:hover, .signup-box button:hover {
+    background: #218838;
+}
+/* chris code ^ */
+

@@ -1,0 +1,652 @@
+    /* corinne's code */
+
+    
+    .menu-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.menu-nav button {
+    background-color: #388e3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.menu-nav button:hover {
+    background-color: #2e7030;
+}
+
+.site-header {
+    padding: 0;
+    width: 100%;
+    background-color: #f1e8d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #d9cbb6;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-left img.site-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-center .site-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #5a4632;
+    text-align: center;
+    white-space: nowrap;
+    padding-left: 100px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.header-icon {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #5a4632;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.header-icon:hover {
+    transform: scale(1.15);
+    color: #8b6f54;
+}
+
+
+@media (max-width: 600px) {
+    .header-center .site-title {
+        font-size: 1.3rem;
+    }
+
+    .header-icon {
+        font-size: 1.4rem;
+    }
+
+    .header-left img.site-logo {
+        height: 40px;
+    }
+}
+
+.menu-nav {
+    margin-top: 40px;  
+}
+
+.order-banner {
+    width: 100%;
+    background-color: #f1e8d9; 
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.order-banner-content {
+    background-color: #ffffff;
+    padding: 35px 50px;
+    border-radius: 18px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    flex-wrap: nowrap; 
+
+    gap: 35px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    max-width: 900px; 
+    width: 100%;      
+
+    box-sizing: border-box;
+}
+
+
+.order-banner-content h1{
+    white-space: nowrap;
+}
+
+.order-btn {
+    background-color: #5a4632;
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.order-btn:hover {
+    transform: scale(1.05);
+    background-color: #7a6148;
+}
+
+.order-separator {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #5a4632;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .order-banner-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px 30px;
+    }
+
+    .order-btn {
+    background-color: #5a4632;
+    color: white;
+    border: none;
+    padding: 14px 32px;     
+    font-size: 1.3rem;      
+    font-weight: 700;
+    border-radius: 10px;    
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    white-space: nowrap;    
+}
+
+
+    .order-separator {
+        font-size: 1.2rem;
+    }
+}
+
+.weekly-deal {
+    width: 100%;
+    height: 350px;
+    background-image: url("imgs/taco deals.png"); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.deal-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.88);
+    padding: 20px 30px;
+    border-radius: 14px;
+    max-width: 330px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.deal-overlay h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #5a4632;
+    font-weight: 800;
+}
+
+.deal-overlay p {
+    margin: 5px 0 15px 0;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #5a4632;
+}
+
+.deal-btn {
+    width: 100%;
+    background-color: #5a4632;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.deal-btn:hover {
+    transform: scale(1.03);
+    background-color: #7a6148;
+}
+
+.weekly-deal {
+    width: 100%;
+    height: 350px;
+    background-image: url("imgs/taco\ deals.png"); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.site-header {
+    width: 100%;
+    background-color: #f1e8d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+    border-bottom: 2px solid #d9cbb6;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+
+.header-left {
+    width: 33%;
+    display: flex;
+    gap: 18px;
+}
+
+
+.header-center {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-right {
+    width: 33%;
+}
+
+.site-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-icon {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #5a4632;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.header-icon:hover {
+    transform: scale(1.15);
+    color: #8b6f54;
+}
+
+.delivery-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    overflow-y: auto;
+justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+    padding: 40px 0;
+}
+
+.delivery-modal {
+    background: #fff;
+    padding: 35px 40px;
+    width: 100%;
+    height: 115%;
+    max-width: 550px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-delivery {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #5a4632;
+}
+
+.delivery-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.delivery-form input,
+.delivery-form textarea {
+    padding: 12px;
+    border: 2px solid #d9cbb6;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.delivery-submit {
+    margin-top: 15px;
+    padding: 14px 0;
+    background-color: #5a4632;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.delivery-submit:hover {
+    background-color: #7a6148;
+    transform: scale(1.03);
+}
+
+.pickup-btn {
+    white-space: nowrap;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    overflow-y: auto;
+    z-index: 10000;
+    padding: 40px 0;
+}
+
+.cart-modal {
+    background: #fff;
+    padding: 35px 40px;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+    position: relative;
+}
+
+.close-cart {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #5a4632;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.cart-summary {
+    margin-top: 25px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.total {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.checkout-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px 0;
+    background-color: #5a4632;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #7a6148;
+    transform: scale(1.03);
+}
+
+/* SIGN-IN MODAL */
+.signin-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 40px 0;
+}
+
+.signin-modal {
+    background: #fff;
+    padding: 35px 40px;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+    position: relative;
+    text-align: center;
+    animation: slideUp 0.3s ease;
+}
+
+.close-signin {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #5a4632;
+}
+
+.signin-logo {
+    width: 90px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.signin-modal h2 {
+    font-size: 1.4rem;
+    color: #5a4632;
+    margin-bottom: 12px;
+}
+
+.signin-switch {
+    font-size: 1rem;
+    margin-bottom: 22px;
+    color: #5a4632;
+}
+
+.signin-switch span {
+    font-weight: bold;
+}
+
+.signin-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d9cbb6;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.signin-continue {
+    width: 100%;
+    padding: 14px 0;
+    background-color: #5a4632;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.signin-continue:hover {
+    background-color: #7a6148;
+    transform: scale(1.03);
+}
+
+.signin-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.signin-divider hr {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background: #d9cbb6;
+}
+
+.signin-divider span {
+    font-weight: bold;
+    color: #5a4632;
+}
+
+.signin-create {
+    width: 100%;
+    padding: 14px 0;
+    background-color: #8b6f54;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.signin-create:hover {
+    background-color: #a38468;
+    transform: scale(1.03);
+}
+.faculty-link {
+    margin-top: 20px;
+    text-align: center;
+    color: #5a4632;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.faculty-link:hover {
+    color: #8b6f54;
+}
+
+input {
+  display: block;
+  width: 250px;
+  margin-bottom: 15px; 
+  margin: 0 auto 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5a4632;
+}
+
+.signout-btn {
+  background: #5a4632;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.signout-btn:hover {
+  background-color: #7a6148;
+}
+
+#signinOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;      
+  padding: 20px;            
+  overflow-y: auto;         
+}
+
+.user-profile .profile-circle {
+    width: 50px;   
+    height: 50px;  
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px; 
+}
+
+.signout-btn {
+    padding: 8px 16px; 
+    font-size: 1rem;   
+}
+
+/* corinne's code */

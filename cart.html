@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--corinnes code-->
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexican Eats - Shopping Cart</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header class="site-header">
+    <div class="header-left">
+        <a href="menu.html" class="header-icon">📖</a>
+        <a href="deals.html" class="header-icon">💸</a>
+        <a href="rewards.html" class="header-icon">🎉</a>
+    </div>
+
+    <div class="header-center">
+        <a href="main.html">
+            <img src="imgs/chatgpt.png" alt="Site Logo" class="site-logo">
+        </a>
+    </div>
+
+   <div class="header-right">
+    <span class="header-icon sign-in-btn" id="signInIcon">🔐</span>
+
+    <div class="user-profile" id="userProfile" style="display:none;">
+        <img src="imgs/aitacogirl.png" class="profile-circle">
+        <button class="signout-btn" id="signOutBtn">Sign Out</button>
+    </div>
+
+    <span class="header-icon cart-btn">🛒</span>
+</div>
+</header>
+    
+    <div class="login-container">
+        <h1>Your Shopping Cart</h1>
+        
+        <div class="cart-content">
+            <div class="cart-items">
+                <h3>Cart Items</h3>
+                <div id="cart-items-list">
+                    <p>Your cart is currently empty</p>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Tax:</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Tip:</span>
+                    <span>
+                        <input type="number" id="tip-amount" placeholder="0.00" min="0" step="0.01">
+                    </span>
+                </div>
+                <div class="summary-line total">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            
+                <button class="payment-btn" onclick="showPaymentModal()">Choose Payment Method</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Choose Payment Method</h2>
+                <span class="close" onclick="closePaymentModal()">&times;</span>
+            </div>
+            <div class="payment-options">
+                <div class="payment-option" onclick="selectPayment('credit-card')">
+                    <div class="payment-icon">💳</div>
+                    <div class="payment-info">
+                        <h4>Credit/Debit Card</h4>
+                        <p>Pay securely with your card</p>
+                    </div>
+                </div>
+                
+                <div class="payment-option" onclick="selectPayment('paypal')">
+                    <div class="payment-icon">🅿️</div>
+                    <div class="payment-info">
+                        <h4>PayPal</h4>
+                        <p>Fast & secure PayPal checkout</p>
+                    </div>
+                </div>
+                
+                <div class="payment-option" onclick="selectPayment('apple-pay')">
+                    <div class="payment-icon">🍎</div>
+                    <div class="payment-info">
+                        <h4>Apple Pay</h4>
+                        <p>Quick checkout with Apple Pay</p>
+                    </div>
+                </div>
+                
+                <div class="payment-option" onclick="selectPayment('google-pay')">
+                    <div class="payment-icon">🔵</div>
+                    <div class="payment-info">
+                        <h4>Google Pay</h4>
+                        <p>Pay with Google Pay</p>
+                    </div>
+                </div>
+                
+                <div class="payment-option" onclick="selectPayment('cash')">
+                    <div class="payment-icon">💵</div>
+                    <div class="payment-info">
+                        <h4>Cash on Delivery</h4>
+                        <p>Pay when you receive your order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="card-payment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Card Payment</h2>
+                <span class="close" onclick="closeCardModal()">&times;</span>
+            </div>
+            <div class="card-form">
+                <h3>Enter Card Details</h3>
+                <form id="card-form" onsubmit="processPayment(event)">
+                    <div class="form-group">
+                        <label for="card-name">Cardholder Name</label>
+                        <input type="text" id="card-name" placeholder="John Doe" required pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="tel" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" pattern="[\d\s-]{14,19}" title="Card number must be 14-19 digits." required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="card-expiry">Expiry Date (MM/YY)</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" pattern="(0[1-9]|1[0-2])\/\d{2}" title="Enter a valid expiration date in MM/YY format (e.g., 12/25)" required>
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="card-cvv">CVV</label>
+                            <input type="text" id="card-cvv" placeholder="123" maxlength="4" pattern="\d{3,4}" title="CVV must be 3 or 4 digits" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="back-btn" onclick="closeCardModal()">Back</button>
+                        <button type="submit" class="confirm-btn">Confirm Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="receipt-modal" class="modal">
+        <div class="receipt-content">
+            <div class="receipt-header">
+                <div class="receipt-title">
+                    <h1>RECEIPT</h1>
+                    <h2>Mexican Eats</h2>
+                </div>
+                <span class="close" onclick="closeReceiptModal()">&times;</span>
+            </div>
+            <div class="receipt-body">
+                <div class="restaurant-info">
+                    <h3>🌮 Mexican Eats Restaurant 🌮</h3>
+                    <p>Authentic Mexican Cuisine</p>
+                </div>
+                
+                <div class="receipt-section">
+                    <h4>Order Details</h4>
+                    <p><strong>Order #:</strong> <span id="receipt-order-number"></span></p>
+                    <p><strong>Date:</strong> <span id="receipt-date"></span></p>
+                    <p><strong>Time:</strong> <span id="receipt-time"></span></p>
+                </div>
+                
+                <div class="receipt-section">
+                    <h4>Items Ordered</h4>
+                    <div class="receipt-items" id="receipt-items"></div>
+                </div>
+                
+                <div class="receipt-totals">
+                    <div class="total-line">
+                        <span>Subtotal:</span>
+                        <span id="receipt-subtotal">$0.00</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Tax (8%):</span>
+                        <span id="receipt-tax">$0.00</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Tip:</span>
+                        <span id="receipt-tip">$0.00</span>
+                    </div>
+                    <div class="total-line final-total">
+                        <span><strong>TOTAL:</strong></span>
+                        <span id="receipt-total">$0.00</span>
+                    </div>
+                </div>
+                
+                <div class="receipt-section">
+                    <h4>Payment Method</h4>
+                    <p id="receipt-payment-method">Credit Card</p>
+                </div>
+                
+                <div class="completion-time">
+                    <p><strong>Estimated Completion:</strong></p>
+                    <p id="receipt-completion">30-45 minutes</p>
+                </div>
+                
+                <div class="receipt-footer">
+                    <p><strong>Thank you for your order!</strong></p>
+                    <p>🌟 You earned 20 reward points! 🌟</p>
+                    <button class="print-btn" onclick="window.print()">Print Receipt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script>
+      const tipInput = document.getElementById('tip-amount');
+      if (tipInput) {
+        tipInput.addEventListener('input', () => {
+          const cart = (typeof loadCart === 'function') ? loadCart() : [];
+          const totals = computeTotals(cart);
+          let tip = parseFloat(tipInput.value) || 0;
+          if (tip < 0) tip = 0; 
+          const newTotal = totals.total + tip;
+          const subtotalEl = document.getElementById('cart-subtotal');
+          const taxEl = document.getElementById('cart-tax');
+          const totalEl = document.getElementById('cart-total');
+          if (subtotalEl) subtotalEl.textContent = '$' + totals.subtotal.toFixed(2);
+          if (taxEl) taxEl.textContent = '$' + totals.tax.toFixed(2);
+          if (totalEl) totalEl.textContent = '$' + newTotal.toFixed(2);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        refreshAllCarts();
+      });
+    </script>
+</body>
+</html>
+<!--corinnes code-->

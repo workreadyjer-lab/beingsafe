@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--corinne and chris code-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexican eats</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+        </div>
+        <div class="nav-right">
+            <a href="cart.html" class="cart-btn">🛒 Cart (0)</a>
+            <a href="main.html" class="home-btn">Home</a>
+        </div>
+    </nav>
+    
+    <div class="login-container">
+        <h1>Ready to Order? Sign In or Join Us</h1>
+        <div class="login-boxes">
+            <div class="login-box">
+                <h3>Login</h3>
+                <form id="login-form">
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" pattern="[A-Za-z0-9_-]{3,}" title="Username must be at least 3 characters long and contain only letters, numbers, dashes, or underscores." required>
+                    </div>
+
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" minlength="8" required title="Password must be at least 8 characters long.">
+                    </div>
+                    
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            
+            <div class="signup-box">
+                <h3>Sign Up</h3>
+                <form id="signup-form">
+                    <div>
+                        <label for="signup-name">Full Name:</label>
+                        <input type="text" id="signup-name" name="signupName" pattern="[A-Za-z\s]+" title="Full Name should only contain letters and spaces." required>
+                    </div>
+                    
+                    <div>
+                        <label for="signup-username">Username:</label>
+                        <input type="text" id="signup-username" name="signupUsername" pattern="[A-Za-z0-9_-]{3,}" title="Username must be at least 3 characters long and contain only letters, numbers, dashes, or underscores." required>
+                    </div>
+
+                    <div>
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" name="signupPassword" minlength="8" title="Password must be at least 8 characters long and include one uppercase letter, one lowercase letter, and one number." required>
+                    </div>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="login.js"></script>
+</body>
+</html>
+<!--corinne and chris code-->

@@ -1,0 +1,307 @@
+<!-- corinne's code -->
+ <head>
+    <link rel="stylesheet" href="menu.css" />
+</head>
+
+<html>
+<body>
+<header class="site-header">
+    <div class="header-left">
+        <a href="menu.html" class="header-icon">📖</a>
+        <a href="deals.html" class="header-icon">💸</a>
+        <a href="rewards.html" class="header-icon">🎉</a>
+    </div>
+
+    <div class="header-center">
+        <a href="main.html">
+            <img src="imgs/chatgpt.png" alt="Site Logo" class="site-logo">
+        </a>
+    </div>
+
+   <div class="header-right">
+    <span class="header-icon sign-in-btn" id="signInIcon">🔐</span>
+
+    <div class="user-profile" id="userProfile" style="display:none;">
+        <img src="imgs/aitacogirl.png" class="profile-circle">
+        <button class="signout-btn" id="signOutBtn">Sign Out</button>
+    </div>
+
+    <span class="header-icon cart-btn">🛒</span>
+</div>
+</header>
+
+<div class="menu-nav">
+    <button onclick="document.getElementById('breakfast').scrollIntoView({ behavior: 'smooth' });">Breakfast</button>
+    <button onclick="document.getElementById('lunch').scrollIntoView({ behavior: 'smooth' });">Lunch</button>
+    <button onclick="document.getElementById('dinner').scrollIntoView({ behavior: 'smooth' });">Dinner</button>
+    <button onclick="document.getElementById('dessert').scrollIntoView({ behavior: 'smooth' });">Dessert</button>
+</div>
+
+<h2 id="breakfast" class="menu-section-title">Breakfast</h2>
+
+<div class="page-content">
+<div class="menu-section" aria-labelledby="breakfast">
+    
+    <div class="menu-item" data-name="Chilaquiles" data-price="8.99" data-image="imgs/breakfast/chilaquile.jpg">
+        <img src="imgs/breakfast/chilaquile.jpg" alt="Breakfast Chilaquile" />
+        <h3>Chilaquiles</h3>
+        <p>Chips de tortilla crujientes cocidos a fuego lento en salsa, cubiertos con queso y huevos.(Crispy tortilla chips simmered in salsa, topped with cheese and eggs.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">            
+    <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
+    <div class="menu-item" data-name="Huevos a la Mexicana" data-price="7.99" data-image="imgs/breakfast/huevos a la mexicana.png">
+        <img src="imgs/breakfast/huevos a la mexicana.png" alt="Huevos a la mexicana" />
+        <h3>Huevos a la Mexicana</h3>
+        <p>Huevos revueltos cocinados con jalapeño fresco, cebolla y tomate.(Scrambled eggs cooked with fresh jalapeño, onion, and tomato.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-name="Molletes" data-price="6.99" data-image="imgs/breakfast/mexican molletes.png">
+        <img src="imgs/breakfast/mexican molletes.png" alt="Mexican molletes" />
+        <h3>Molletes</h3>
+        <p>Sándwiches abiertos con frijoles refritos, queso fundido y salsa.(Open-faced sandwiches with refried beans, melted cheese, and salsa.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-name="Tamales" data-price="5.99" data-image="imgs/breakfast/tamales.png">
+        <img src="imgs/breakfast/tamales.png" alt="tamales" />
+        <h3>Tamales</h3>
+        <p>Masa de maíz al vapor rellena de ingredientes salados o dulces, envuelta en una hoja de maíz.(Steamed corn dough filled with savory or sweet fillings, wrapped in a corn husk.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-name="Enfrijoladas" data-price="7.99" data-image="imgs/breakfast/enfrijoladas de queso.png">
+        <img src="imgs/breakfast/enfrijoladas de queso.png" alt="enfrijoladas de queso" />
+        <h3>Enfrijoladas</h3>
+        <p>Tortillas de maíz bañadas en una rica salsa de frijoles, rellenas de queso y dobladas.(Corn tortillas dipped in a rich bean sauce, filled with cheese and folded.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+</div>
+
+<h2 id="lunch" class="menu-section-title">Lunch</h2>
+
+<div class="menu-section" aria-labelledby="lunch">
+
+    <div class="menu-item" data-name="Tacos" data-price="9.99" data-image="imgs/tacos.png">
+        <img src="imgs/tacos.png" alt="Tacos" />
+        <h3>Tacos</h3>
+        <p>Tortillas de maíz clásicas rellenas con carne sazonada, cebolla y cilantro, a elegir.(Classic corn tortillas filled with your choice of seasoned meat, onion, and cilantro.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-name="Chiles Rellenos" data-price="10.99" data-image="imgs/chiles-rellenos.png">
+        <img src="imgs/chiles-rellenos.png" alt="chiles rellenos" />
+        <h3>Chiles Rellenos</h3>
+        <p>Chiles poblanos rellenos de queso, rebozados, fritos y cubiertos con salsa. (Poblano peppers stuffed with cheese, battered, fried, and topped with sauce.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-name="Pozole Rojo" data-price="11.99" data-image="imgs/posole rojo.png">
+        <img src="imgs/posole rojo.png" alt="posole rojo" />
+        <h3>Pozole Rojo</h3>
+        <p>Una sustanciosa sopa de maíz molido con tierna carne de cerdo en un rico caldo de chile rojo. (A hearty hominy soup with tender pork in a rich red chile broth.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-name="Tostadas" data-price="8.99" data-image="imgs/tostadas.png">
+        <img src="imgs/tostadas.png" alt="tostadas" />
+        <h3>Tostadas</h3>
+        <p>Tortillas fritas crujientes cubiertas con frijoles, carne, lechuga, queso y crema. (Crispy fried tortillas topped with beans, meat, lettuce, cheese, and cream.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-name="Beef Enchiladas" data-price="12.99" data-image="imgs/beef enchiladas.png">
+        <img src="imgs/beef enchiladas.png" alt="beef enchiladas" />
+        <h3>Beef Enchiladas</h3>
+        <p>Tortillas de maíz enrolladas alrededor de carne de res, cubiertas con una sabrosa salsa de chile y queso.(Corn tortillas rolled around beef, covered in a savory chile sauce and cheese.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+</div>
+
+<h2 id="dinner" class="menu-section-title">Dinner</h2>
+<div class="menu-section" aria-labelledby="dinner">
+    
+    <div class="menu-item" data-name="Chicken Flautas" data-price="10.99" data-image="imgs/chicken flautas.png">
+        <img src="imgs/chicken flautas.png" alt="chicken flautas" />
+        <h3>Chicken Flautas</h3>
+        <p>Tortillas de maíz crujientes enrolladas rellenas de pollo desmenuzado, cubiertas con crema y queso. (Crispy rolled corn tortillas filled with shredded chicken, topped with cream and cheese.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
+    <div class="menu-item" data-name="Frijoles Charros" data-price="7.99" data-image="imgs/frijoles charros.png">
+        <img src="imgs/frijoles charros.png" alt="frijoles charros" />
+        <h3>Frijoles Charros</h3>
+        <p>Una sopa tradicional de frijoles pintos cocinada con tocino, chorizo y cebolla. (A traditional pinto bean soup cooked with bacon, chorizo, and onion.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
+    <div class="menu-item" data-name="Caldo de Albóndigas" data-price="9.99" data-image="imgs/Caldo de Albóndigas.png">
+        <img src="imgs/Caldo de Albóndigas.png" alt="Caldo de Albóndigas" />
+        <h3>Caldo de Albóndigas</h3>
+        <p>A comforting and hearty meatball soup with fresh vegetables in a light broth. (A comforting and hearty meatball soup with fresh vegetables in a light broth.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
+    <div class="menu-item" data-name="Caldillo de Carne" data-price="9.99" data-image="imgs/Caldillo de Carne Molida.png">
+        <img src="imgs/Caldillo de Carne Molida.png" alt="Caldillo de Carne Molida" />
+        <h3>Caldillo de Carne</h3>
+        <p>Una sabrosa sopa de carne picada y patatas, perfecta para una cena reconfortante. (A flavorful ground beef and potato soup, perfect for a warming dinner.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-name="Rajas con Papas" data-price="8.99" data-image="imgs/Grilled Rajas con Papas.png">
+        <img src="imgs/Grilled Rajas con Papas.png" alt="Grilled Rajas con Papas" />
+        <h3>Rajas con Papas</h3>
+        <p>Tiras de chile poblano asado y papas cocinadas en una deliciosa salsa de crema. (Roasted poblano pepper strips and potatoes cooked in a delicious cream sauce.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+</div>
+
+<h2 id="dessert" class="menu-section-title">Dessert</h2>
+<div class="menu-section" aria-labelledby="dessert">
+    
+    <div class="menu-item" data-name="Tres Leches Cake" data-price="6.99" data-image="imgs/tres leches cake.png">
+        <img src="imgs/tres leches cake.png" alt="tres leches cake" />
+        <h3>Tres Leches Cake</h3>
+        <p>Un bizcocho empapado en tres tipos de leche: evaporada, condensada y nata espesa. (A sponge cake soaked in three kinds of milk: evaporated, condensed, and heavy cream.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
+    <div class="menu-item" data-name="Flan" data-price="5.99" data-image="imgs/flan.png">
+        <img src="imgs/flan.png" alt="flan" />
+        <h3>Flan</h3>
+        <p>Un postre clásico de crema pastelera con una rica y clara salsa de caramelo por encima. (A classic creamy custard dessert with a rich, clear caramel sauce on top.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
+    <div class="menu-item" data-name="Churros" data-price="4.99" data-image="imgs/churros.png">
+        <img src="imgs/churros.png" alt="churros" />
+        <h3>Churros</h3>
+        <p>Pasteles de masa frita espolvoreados con azúcar y canela, servidos con chocolate para mojar. (Fried dough pastries dusted with cinnamon sugar, served with chocolate for dipping.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
+    <div class="menu-item" data-name="Arroz con Leche" data-price="4.99" data-image="imgs/arroz con leche.png">
+        <img src="imgs/arroz con leche.png" alt="arroz con leche" />
+        <h3>Arroz con Leche</h3>
+        <p>Un arroz con leche dulce y cremoso, ligeramente aromatizado con canela y vainilla. (A sweet and creamy rice pudding, lightly flavored with cinnamon and vanilla.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    
+    <div class="menu-item" data-name="Buñuelos" data-price="5.99" data-image="imgs/Buñuelos.png">
+        <img src="imgs/Buñuelos.png" alt="Buñuelos" />
+        <h3>Buñuelos</h3>
+        <p>Buñuelos crujientes y dorados, espolvoreados con azúcar o rociados con sirope. (Crispy, golden-fried fritters sprinkled with sugar or drizzled with syrup.)</p>
+        <div class="quantity-controls">
+            <button class="quantity-btn minus-btn" aria-label="Decrease quantity">-</button>
+<input type="number" class="quantity" value="0" min="0">
+            <button class="quantity-btn plus-btn" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    </div>
+
+</div>
+<script src="cart.js"></script>
+<script src="menu.js"></script>
+</body>
+</html>
+
+<!-- corinne's code ^ -->
